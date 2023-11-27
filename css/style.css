@@ -1,0 +1,56 @@
+.registration-cssave {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #444444;
+    color: #333;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 1px solid #000000;
+    /* Замените на нужный цвет рамки */
+    border-radius: 5px;
+    /* Добавить закругление углов, если необходимо */
+}
+
+.form-group {
+    padding: 20px;
+    text-align: center;
+}
+
+.text-center {
+    color: white;
+}
+
+.text-message {
+    color: white;
+    width: 50%;
+    text-align: center;
+}
+
+.text-hello {
+    color: black;
+    text-align: center;
+}
+
+.body-color {
+    color: white;
+}
+
+.form-style {
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+}
+
+.edit-cssave {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 1px solid #000000;
+    background-color: #444444;
+}
