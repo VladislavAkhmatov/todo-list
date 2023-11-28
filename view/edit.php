@@ -7,32 +7,33 @@ if (isset($_GET['id'])) {
 } else {
     header('Location: 404');
 }
+
 ?>
 <?php require_once('header.php'); ?>
 <div class="edit-cssave">
     <form class="form-style" action="../save/saveUser" method="POST">
         <h3 class="text-center">Форма редактирования</h3>
         <div class="form-group">
-            <input type="hidden" name="id" value="<?= $user->id ?>">
+            <input class="form-control item" type="hidden" name="id" value="<?= $user->id ?>">
         </div>
         <div class="form-group">
-            <input type="text" name="lastname" value="<?= $user->lastname ?>">
+            <input class="form-control item" type="text" name="lastname" value="<?= $user->lastname ?>">
         </div>
         <div class="form-group">
-            <input type="text" name="name" value="<?= $user->name ?>">
+            <input class="form-control item" type="text" name="name" value="<?= $user->name ?>">
         </div>
         <div class="form-group">
-            <input type="email" name="email" value="<?= $user->login ?>">
+            <input class="form-control item" type="email" name="email" value="<?= $user->login ?>">
         </div>
         <div class="form-group">
-            <select name="role_id">
+            <select class="form-select" name="role_id">
                 <?php
                 Helper::printOptions(($userMap->arrRoles()));
                 ?>
             </select>
         </div>
         <div class="form-group">
-            <input type="password" name="password">
+            <input class="form-control item" type="password" name="password">
         </div>
         <div class="form-group">
             <input class="btn btn-success" type="submit" value="Обновить">

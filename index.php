@@ -3,6 +3,13 @@ require_once('secure.php');
 $userMap = new UserMap();
 $users = $userMap->selectAll();
 require_once('view/header.php');
+
+if ($_GET['message'] == 'updated') {
+    $message = 'Пользователь успешно обновлен';
+} elseif ($_GET['message'] == 'error') {
+    $message = 'Ошибка при обновлении пользователя';
+}
+
 ?>
 
 
@@ -11,8 +18,11 @@ require_once('view/header.php');
         <?= $_SESSION['name'] ?>, YOU ROLE IS -
         <?= $_SESSION['roleName'] ?>
     </h4>
+    <h4 class="text-hello">
+        <?= $message; ?>
+    </h4>
 </div>
-<div>
+<div class="table-center">
     <?php
     if (Helper::can('admin')) {
         ?>
@@ -35,7 +45,7 @@ require_once('view/header.php');
     ?>
     </table>
 </div>
-<form action="secure" method="POST">
+<form class="btn-center" action="secure" method="POST">
     <input class="btn btn-primary" type="submit" value="Выход" name="out">
 </form>
 <?php require_once('view/footer.php'); ?>
