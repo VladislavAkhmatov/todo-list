@@ -18,7 +18,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         header('Location: ../index');
         exit;
     } else {
-        header('Location: 404');
+        header('Location: ../404');
         exit;
     }
 }

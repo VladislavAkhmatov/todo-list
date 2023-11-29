@@ -5,7 +5,7 @@ if (isset($_GET['id'])) {
     $userMap = new UserMap();
     $user = $userMap->findUserById($id);
 } else {
-    header('Location: 404');
+    header('Location: ../404');
 }
 
 ?>

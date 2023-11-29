@@ -1,19 +1,19 @@
 <?php require_once('header.php'); ?>
 <div class="registration-cssave">
-        <?php
-        $message = 'Форма входа';
-        switch ($_GET['message']) {
-            case 'email':
-                $message = "Такой email уже зарестрирован";
-                break;
-            case 'created':
-                $message = "Пользователь успешно зарегестрирован";
-                break;
-            case 'error':
-                $message = "Ошибка при создании пользователя";
-                break;
-        }
-        ?>
+    <?php
+    $message = 'Форма входа';
+    switch ($_GET['message']) {
+        case 'email':
+            $message = "Такой email уже зарестрирован";
+            break;
+        case 'created':
+            $message = "Пользователь успешно зарегистрирован";
+            break;
+        case 'error':
+            $message = "Ошибка при создании пользователя";
+            break;
+    }
+    ?>
 
     <form class="form-style" action="auth" method="POST">
         <h3 class="text-center">

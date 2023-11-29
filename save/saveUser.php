@@ -41,7 +41,12 @@ if (isset($_POST['update'])) {
     );
 
     $userMap = new UserMap();
-    if ($userMap->updateUser($user)) {
+
+    $existingUser = $userMap->findUserByEmailAndId($user);
+    if (!$existingUser) {
+        header('Location: ../index?message=email');
+        exit();
+    } elseif ($userMap->updateUser($user)) {
         header('Location: ../index?message=updated');
         exit();
     } else {

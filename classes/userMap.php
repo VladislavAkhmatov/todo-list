@@ -61,6 +61,21 @@ class UserMap extends Config
         return false;
     }
 
+    public function findUserByEmailAndId(User $user)
+    {
+        $query = "SELECT user.id as id, user.login as login FROM user WHERE login = :login and id = :id";
+        $res = $this->db->prepare($query);
+        $res->execute([
+            'login' => $user->login,
+            'id' => $user->id
+        ]);
+        $login = $res->fetch(PDO::FETCH_OBJ);
+        if ($login) {
+            return true;
+        }
+        return false;
+    }
+
     public function findUserById($id)
     {
         $query = "SELECT user.id as id, user.lastname as lastname, user.name as name, user.login as login, user.password as password,

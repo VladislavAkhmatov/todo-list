@@ -63,3 +63,16 @@
 .btn-center {
     text-align: center;
 }
+
+.error {
+    color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+.error hr {
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}

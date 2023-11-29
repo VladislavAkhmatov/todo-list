@@ -4,14 +4,18 @@ $userMap = new UserMap();
 $users = $userMap->selectAll();
 require_once('view/header.php');
 
-if ($_GET['message'] == 'updated') {
-    $message = 'Пользователь успешно обновлен';
-} elseif ($_GET['message'] == 'error') {
-    $message = 'Ошибка при обновлении пользователя';
+switch ($_GET['message']) {
+    case 'email':
+        $message = "Такой email уже зарестрирован";
+        break;
+    case 'updated':
+        $message = "Пользователь успешно обновлен";
+        break;
+    case 'error':
+        $message = "Ошибка при создании пользователя";
+        break;
 }
-
 ?>
-
 
 <div>
     <h4 class="text-hello">WELCOME
