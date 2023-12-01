@@ -1,5 +1,5 @@
 <?php
-class Helper
+class Helper extends Config
 {
     public static function can($role)
     {

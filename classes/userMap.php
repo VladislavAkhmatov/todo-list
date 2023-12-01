@@ -5,7 +5,7 @@ class UserMap extends Config
     {
         $query = "SELECT user.id as id, user.lastname as lastname, user.name as name, user.login as login, user.password as password, 
         role.system_name as sys_name, role.name as roleName FROM user
-        INNER JOIN role ON role.role_id = user.role_id";
+        INNER JOIN role ON role.role_id = user.role_id WHERE user.id != {$_SESSION['id']}";
         $res = $this->db->prepare($query);
         $res->execute();
         return $res->fetchAll(PDO::FETCH_OBJ);
@@ -75,6 +75,8 @@ class UserMap extends Config
         }
         return false;
     }
+
+
 
     public function findUserById($id)
     {

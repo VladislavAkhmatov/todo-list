@@ -76,3 +76,7 @@
     margin-top: 20px;
     padding-bottom: 20px;
 }
+
+.form-group label {
+    color: white;
+}
