@@ -60,7 +60,7 @@ if (Helper::can('admin')) {
 if (Helper::can('user')) {
     $todoMap = new ToDoMap();
     $id = $_SESSION['id'];
-    $todos = $todoMap->findToDoById($id);
+    $todos = $todoMap->findToDoByUserId($id);
     $message = "Ваши задачи";
     switch ($_GET['message']) {
         case 'success':
@@ -74,6 +74,12 @@ if (Helper::can('user')) {
             break;
         case 'errToDo':
             $message = "Ошибка при добавлении задачи";
+            break;
+        case 'okUpdate':
+            $message = "Задача успешно обновлена";
+            break;
+        case 'errUpdate':
+            $message = "Ошибка при обновлении задачи";
             break;
     }
     ?>
@@ -100,7 +106,7 @@ if (Helper::can('user')) {
                     echo '<td>' . $todo->name . '</td>';
                     echo '<td>' . $todo->description . '</td>';
                     echo '<td>' . $todo->date_begin . '</td>';
-                    echo '<td><a class="btn btn-success" href=view/edit?id=' . $todo->id . '>Редактировать</a> ';
+                    echo '<td><a class="btn btn-success" href=view/editToDo?id=' . $todo->id . '>Редактировать</a> ';
                     echo '<a class="btn btn-danger" href=delete/deleteToDo?id=' . $todo->id . '>Удалить</a></td>';
                     echo '</tr>';
                 }

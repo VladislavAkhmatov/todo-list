@@ -20,6 +20,7 @@
 
 .text-center {
     color: white;
+    margin: 0px;
 }
 
 .text-message {
@@ -79,4 +80,9 @@
 
 .form-group label {
     color: white;
+}
+
+.hidden {
+    margin: 0px;
+    padding: 0px;
 }

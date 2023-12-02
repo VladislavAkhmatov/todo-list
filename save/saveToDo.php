@@ -15,5 +15,19 @@ if (Helper::can('user')) {
             header('Location: ../index?message=errToDo');
         }
     }
+
+    if (isset($_POST['update'])) {
+        $todo = new ToDo();
+        $todoMap = new ToDoMap();
+        $todo->id = $_POST['id'];
+        $todo->name = $_POST['name'];
+        $todo->description = $_POST['description'];
+        if ($todoMap->updateToDo($todo)) {
+            header('Location: ../index?message=okUpdate');
+            exit;
+        } else {
+            header('Location: ../index?message=errUpdate');
+        }
+    }
 }
 ?>
